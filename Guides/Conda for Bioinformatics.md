@@ -2,6 +2,25 @@
 
 This document describes some simple commands to get the conda package up and running on 64-bit Linux machines (and likely MacOS machines).
 
+## Quick Install conda
+
+This section describes how to quickly setup conda and installing the first packages. Read subsequent sections for more details.
+
+- Install conda:
+  ```bash
+  wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+  bash Miniconda3-latest-Linux-x86_64.sh
+  ```
+- Restart the shell (or log out and in again from the server)
+
+- Install some packages, here samtools, bwa and picard:
+  ```bash
+  conda install -c bioconda samtools
+  conda install -c bioconda bwa
+  conda install -c bioconda picard
+  ```
+
+
 ## Install Conda package manager
 
 There exist two versions of the conda package manager: **Miniconda** and **Anaconda**.
