@@ -7,6 +7,7 @@ This document describes some simple commands to get the conda package up and run
 This section describes how to quickly setup conda and installing the first packages. Read subsequent sections for more details.
 
 - Install conda:
+
   ```bash
   wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
   bash Miniconda3-latest-Linux-x86_64.sh
@@ -14,6 +15,7 @@ This section describes how to quickly setup conda and installing the first packa
 - Restart the shell (or log out and in again from the server)
 
 - Install some packages, here samtools, bwa and picard:
+
   ```bash
   conda install -c bioconda samtools
   conda install -c bioconda bwa
@@ -103,7 +105,17 @@ conda install -c bioconda gatk
 conda install -c bioconda snakemake
 ```
 
-## Backup and Restore conda environments
+## Update Conda Packages
+
+**Note: you might want to backup your current conda environment (next section) before updating!**
+
+To update all packages in conda, use the follwing command:
+
+```bash
+conda update --all
+```
+
+## Backup and Restore Conda Environments
 
 For reprodibility it can sometimes be necessary rerun analysis. Therefore it can be crucial to run the analysis exactly as it was done the first time with same set of packages and versions.
 
