@@ -146,7 +146,7 @@ Now, this environment can be activated:
 source activate <env>
 ```
 
-or deactivated:
+and deactivated:
 
 ```bash
 source deactivate
