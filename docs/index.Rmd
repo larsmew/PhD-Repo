@@ -1,0 +1,11 @@
+---
+title: "PhD Book"
+author: "Lars Andersen"
+site: bookdown::bookdown_site
+output:
+  bookdown::gitbook: default
+---
+
+# Preface {-}
+
+Welcome! This website contains some of the stuff that I have been working on and generated during my PhD work. 

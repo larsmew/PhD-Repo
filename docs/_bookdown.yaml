@@ -1,0 +1,10 @@
+---
+title: "PhD Book"
+auhtor: "Lars Andersen"
+site: "bookdown::bookdown_site"
+output:
+  bookdown::gitbook: default
+    lib_dir: "book_assets"
+  bookdown::pdf_book:
+    keep_tex: yes
+---
