@@ -1,0 +1,151 @@
+```{r include = FALSE}
+library(knitr)
+library(readxl)
+library(dplyr)
+library(forcats)
+library(fastmatch)
+library(ggplot2)
+opts_chunk$set(
+    comment = "#>",
+    #cache = TRUE,
+    #root.dir = "/Users/lars/Documents/PhD/PhD-Repo/SideProjects/haplotypeExample/",
+    collapse = TRUE
+)
+opts_knit$set(
+    root.dir = "/Users/lars/Documents/PhD/PhD-Repo/SideProjects/haplotypeExample/"
+)
+```
+
+## Haplotype Project
+
+*Updated: 15-01-2017*
+
+### Background and Idea
+
+```{r}
+2+2
+```
+
+### Data
+
+This section describes the raw data 
+
+```{r, warning=FALSE}
+# Read onco phenotype data
+brca_data <- read_excel("Onco_pheno_BC1_Example.xlsx")
+brca_data[, 1:10]
+```
+
+```{r, warning=FALSE}
+# read SNP information
+haplotypes_brca <- read.table("haplotypes_brca1_example.txt", header = T)
+haplotypes_brca[1:10, c(1,2,10,15, 55)]
+```
+
+```{r, warning=FALSE}
+# Read SNP location information
+chr_coords <- read.table("qry_139_ouh_geno_snps_with_position.txt", header = T, sep = ",")
+head(chr_coords)
+```
+
+```{r, warning=FALSE}
+# Define BRCA1 gene information
+brca_start <- 41197695
+brca_stop <- 41276113
+brca_middle <- (brca_stop - brca_start)/2 + brca_start
+brca_chr <- 17
+brca_name <- "BRCA1"
+```
+
+
+
+### Methods
+
+1. Filter out SNPs related to the chromosome we're working on ()
+
+### Implementation
+
+```{r, echo=FALSE, warning=FALSE}
+# opts_knit$set(
+#     root.dir = '~/Desktop/haplotype-projekt/'
+# )
+path = '/Users/lars/Desktop/haplotype-projekt/'
+read_chunk(paste0(path, 'Haplotype-projekt.R'))
+#read_chunk('Haplotype-projekt.R')
+
+# Read the correct files
+load(paste0(path, "haplotypes_brca1.RData"))
+#load("haplotypes_brca1.RData")
+brca_data <- read_excel(paste0(path, "Onco_pheno_BC1.xlsx"))
+#brca_data <- read_excel("Onco_pheno_BC1.xlsx")
+source(paste0(path, 'Haplotype-projekt.R'))
+```
+
+Needed packages:
+
+```{r, eval=F}
+library(readxl)
+library(dplyr)
+library(forcats)
+library(fastmatch)
+library(ggplot2)
+```
+
+
+The `extractSamples` method...
+
+
+
+```{r, eval=F, echo=F}
+
+# ```{r extractSamples}
+# ```
+# ```{r}
+# # Example
+# matched <- extractSamples(brca_data, haplotypes_brca, FALSE)
+# matched[1:10, c(2,10,15, 55)]
+# dim(matched)
+# ```
+
+# ```{r findConsensus}
+# ```
+#  ```{r}
+# # Example
+# haplotypes <- findConsensus(matched)
+# haplotypes[1:6]
+# ```
+
+# ```{r findHaplotypeBreaks}
+# ```
+#  ```{r}
+#  # Example
+#  # breaks <- findHaplotypeBreaks(matched, haplotypes)
+#  # head(breaks)
+#  ```
+#  
+# ```{r mapSNPs}
+# ```
+#  
+#  ```{r plot_haplotype}
+#  ```
+#  
+#  ```{r findNearestBreaks}
+#  ```
+ 
+```
+ 
+Combining it all:
+ 
+```{r haplotype_mutation}
+```
+
+```{r}
+mut = "c.1016delA"
+haplotype_mutation(brca_data, haplotypes_brca, chr_coords, brca_start, 
+                   brca_stop, brca_middle, brca_chr, brca_name, mut, 
+                   country = NULL, distinct = F)
+```
+
+
+
+### Results

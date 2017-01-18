@@ -1,4 +1,11 @@
+---
+title: "PhD Book"
+auhtor: "Lars Andersen"
+#date: ```{r} Sys.Date()```
+---
 
-# Preface {-}
+# Welcome {-}
 
 Welcome! This website contains some of the stuff that I have been working on and generated during my PhD work. 
+
+

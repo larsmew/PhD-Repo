@@ -1,4 +1,7 @@
----
+#---
+#new_session: yes
 title: "PhD Book"
 auhtor: "Lars Andersen"
----
+date: "!r Sys.Date()"
+site: "bookdown::bookdown_site"
+#---
